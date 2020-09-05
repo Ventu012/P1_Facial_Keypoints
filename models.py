@@ -8,27 +8,11 @@ class Net(nn.Module):
 
     def __init__(self):
         super(Net, self).__init__()
-        ######################################
-        ## Define all the layers of this CNN, the only requirements are:
+        
+        ## TODO: Define all the layers of this CNN, the only requirements are:
         ## 1. This network takes in a square (same width and height), grayscale image as input
         ## 2. It ends with a linear layer that represents the keypoints
-        ## Last layer output 136 values, 2 for each of the 68 keypoint (x, y) pairs
-        
-        # 1 input image channel (grayscale), 32 output channels/feature maps, 5x5 square convolution kernel
-        
-        
-        ## Shape of a Convolutional Layer
-        # K - out_channels : the number of filters in the convolutional layer
-        # F - kernel_size
-        # S - the stride of the convolution
-        # P - the padding
-        # W - the width/height (square) of the previous layer
-        
-        # Since there are F*F*D weights per filter
-        # The total number of weights in the convolutional layer is K*F*F*D
-        
-        # 224 by 224 pixels
-        # the output Tensor for one image, will have the dimensions: (1, 224, 224)
+        ## it's suggested that you make this last layer output 136 values, 2 for each of the 68 keypoint (x, y) pairs
         
         ## self.conv1 = nn.Conv2d(in_channels, out_channels, kernel_size, stride=1, padding=0)
         self.conv1 = nn.Conv2d(1, 32, 5)
@@ -121,8 +105,7 @@ class Net(nn.Module):
 
         
     def forward(self, x):
-        ###################################
-        ## Define the feedforward behavior of this model
+        ## TODO: Define the feedforward behavior of this model
         ## x is the input image and, as an example, here you may choose to include a pool/conv step:
         
         # 5 conv/relu + pool layers
